@@ -21,7 +21,7 @@ This tutorial outlines the implementation of Active Directory within Azure Virtu
 ## Let's create our Azure resources
 
 1. Create the Domain Controller VM (windows server 2022) named "DC-1"
-  - Take note of the Resource Group and Virtual Network (Vnet) That gets created
+  - Take note of the Resource Group and Virtual Network (Vnet) that gets created
 2. Set the Domain Controller's NIC Private IP address to be static
 
 ![Staticip image](./staticip.png)
@@ -35,7 +35,7 @@ This tutorial outlines the implementation of Active Directory within Azure Virtu
 5. Login to client-1 with RDP and ping DC-1's private IP with ping -t 
 6. Login to the domain controller and enable ICMPv4 in the local windows firewall (access firewall settings by typing wf.msc in start menu)
  - go to inbound rules, sort by protocol and enable the two ipv4 ICMP rules
- - The picture below highlights the two rules you need to enable
+ - The picture below highlights the two rules you need to enable:
 
 ![Icmp rules image](./icmp-rules.png)
 *ICMP Firewall setting*
@@ -85,7 +85,7 @@ This tutorial outlines the implementation of Active Directory within Azure Virtu
 
 ## Connect client-1 to your domain (mydomain.com)
 
-17. From the Azure Portal, set Client-1's DNS settings to the DC's Private Ip by going to networking then clicking on the virtual nic athen going to dns servers option, then restart Client 1
+17. From the Azure Portal, set Client-1's DNS settings to the DC's Private IP by going to networking then clicking on the virtual nic then going to dns servers option, restart Client 1
 
 ![dns](./dns.png)
 
@@ -95,7 +95,7 @@ This tutorial outlines the implementation of Active Directory within Azure Virtu
 
 ## Set up RDP for non-administrative users on Client-1
 
-19. Log into Client-1 as mydomain\jane_admin and open system properties, click "Remote Desktop" then click "selec users that can remotely access this pc"
+19. Log into Client-1 as mydomain\jane_admin and open system properties, click "Remote Desktop" then click "select users that can remotely access this pc"
 20. Allow "Domain Users" access to remote desktop
 
 ![domain user](./domain-users.png)
